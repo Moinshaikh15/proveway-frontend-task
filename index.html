@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BOGO Offer</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+    </style>
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        color: #333;
+        padding: 20px;
+      }
+      h1 {
+        color: #f57ca8;
+        text-align: center;
+        font-size: 24px;
+      }
+      header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      input[type="radio"] {
+        appearance: none;
+        width: 16px;
+        height: 16px;
+        border: 2px solid #ccc;
+        border-radius: 50%;
+        outline: none;
+        margin-right: 5px;
+        vertical-align: middle;
+        position: relative;
+      }
+
+      input[type="radio"]:checked {
+        border-color: #f57ca8;
+      }
+
+      input[type="radio"]:checked::before {
+        content: "";
+        width: 10px;
+        height: 10px;
+        background-color: #f57ca8;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      label {
+        font-size: 14px;
+        font-weight: 600;
+      }
+      button {
+        background-color: #f57ca8;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+      }
+      button:hover {
+        background-color: #ff85b3;
+      }
+
+      select {
+        padding: 4px;
+        width: 65px;
+      }
+
+      .line {
+        width: 96px;
+        height: 1px;
+        background-color: #c8c8c8;
+      }
+      .container {
+        max-width: 400px;
+        margin: 0 auto;
+      }
+      .box {
+        border: 1px solid #e5e5e5;
+        border-radius: 5px;
+        padding: 20px;
+        margin-bottom: 15px;
+        position: relative;
+        cursor: pointer;
+        transition: background-color 0.3s, border-color 0.3s;
+      }
+
+      .box:hover {
+        border-color: #f57ca8;
+      }
+      .row {
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+      }
+      .row > div {
+        display: flex;
+      }
+      .badge {
+        background-color: #f57ca8;
+        color: white;
+        padding: 3px 7px;
+        border-radius: 3px;
+        position: absolute;
+        top: -10px;
+        right: 10px;
+        font-size: 12px;
+      }
+      .details {
+        display: none;
+        margin-top: 10px;
+        font-size: 10px;
+      }
+
+      .box:hover .details {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .price {
+        display: flex;
+        flex-direction: column;
+        font-size: 1.2em;
+        color: #f57ca8;
+        font-size: 14px;
+      }
+      .strike {
+        text-decoration: line-through;
+        color: gray;
+        font-size: 0.9em;
+        font-size: 10px;
+      }
+
+      .free-delivery {
+        color: #f57ca8;
+        font-size: 0.9em;
+        margin-bottom: 10px;
+      }
+
+      .select-inputs {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .total-price {
+        display: flex;
+        justify-content: space-between;
+      }
+      .select-heading {
+        display: flex;
+        gap: 6px;
+      }
+
+      .index {
+        width: 20px;
+        font-weight: 400;
+      }
+      .input {
+        width: 65px;
+      }
+      .discount {
+        background-color: #f57ca8;
+        color: white;
+        padding: 3px 7px;
+        border-radius: 3px;
+        font-size: 12px;
+        margin-left: 10px;
+      }
+      .powered-by {
+        font-size: 12px;
+        color: #c8c8c8;
+        text-align: right;
+        display: block;
+        padding: 10px 0;
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <div class="line"></div>
+        <h1>YAY! It's BOGO</h1>
+        <div class="line"></div>
+      </header>
+
+      <!-- Section for Unit Selection -->
+      <section>
+        <!-- Box 1 -->
+        <article class="box">
+          <div class="row">
+            <div>
+              <input type="radio" name="unit" id="unit1" />
+              <div>
+                <div>
+                  <label for="unit2">1 Unit </label>
+                  <span class="discount">10% off</span>
+                </div>
+                <span style="font-size: 12px; margin-top: 4px"
+                  >Standard Price</span
+                >
+              </div>
+            </div>
+            <div class="price">
+              $10.00 USD <span class="strike">$24.00 USD</span>
+            </div>
+          </div>
+          <div class="details">
+            <div class="select-heading">
+              <span class="index"></span>
+              <span class="input">Size</span>
+              <span class="input">Colour</span>
+            </div>
+
+            <div class="select-inputs">
+              <label class="index">#1:</label>
+              <select class="input">
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+              </select>
+              <select class="input">
+                <option>Black</option>
+                <option>Red</option>
+                <option>Blue</option>
+              </select>
+            </div>
+            <div class="select-inputs">
+              <label class="index">#2:</label>
+              <select>
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+              </select>
+              <select>
+                <option>Colour</option>
+                <option>Black</option>
+                <option>Red</option>
+              </select>
+            </div>
+          </div>
+        </article>
+
+        <!-- Box 2 -->
+        <article class="box">
+          <span class="badge">Most Popular</span>
+          <div class="row">
+            <div>
+              <input type="radio" name="unit" id="unit2" />
+              <label for="unit2">2 Unit </label>
+              <span class="discount">20% off</span>
+            </div>
+            <div class="price">
+              $18.00 USD <span class="strike">$24.00 USD</span>
+            </div>
+          </div>
+
+          <div class="details">
+            <div class="select-heading">
+              <span class="index"></span>
+              <span class="input">Size</span>
+              <span class="input">Colour</span>
+            </div>
+
+            <div class="select-inputs">
+              <label class="index">#1:</label>
+              <select class="input">
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+              </select>
+              <select class="input">
+                <option>Black</option>
+                <option>Red</option>
+                <option>Blue</option>
+              </select>
+            </div>
+            <div class="select-inputs">
+              <label class="index">#2:</label>
+              <select>
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+              </select>
+              <select>
+                <option>Colour</option>
+                <option>Black</option>
+                <option>Red</option>
+              </select>
+            </div>
+          </div>
+        </article>
+
+        <!-- Box 3 -->
+        <article class="box">
+          <div class="row">
+            <div>
+              <input type="radio" name="unit" id="unit1" />
+              <label for="unit2">3 Unit </label>
+              <span class="discount">30% off</span>
+            </div>
+            <div class="price">
+              $24.00 USD <span class="strike">$24.00 USD</span>
+            </div>
+          </div>
+          <div class="details">
+            <div class="select-heading">
+              <span class="index"></span>
+              <span class="input">Size</span>
+              <span class="input">Colour</span>
+            </div>
+
+            <div class="select-inputs">
+              <label class="index">#1:</label>
+              <select class="input">
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+              </select>
+              <select class="input">
+                <option>Black</option>
+                <option>Red</option>
+                <option>Blue</option>
+              </select>
+            </div>
+            <div class="select-inputs">
+              <label class="index">#2:</label>
+              <select>
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+              </select>
+              <select>
+                <option>Colour</option>
+                <option>Black</option>
+                <option>Red</option>
+              </select>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section>
+        <div class="total-price">
+          <p class="free-delivery">Free Delivery</p>
+          <p>Total: $18.00 USD</p>
+        </div>
+
+        <button>+ Add to Cart</button>
+        <span class="powered-by">@ Powered by Pumper</span>
+      </section>
+    </main>
+  </body>
+</html>
